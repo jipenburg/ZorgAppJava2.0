@@ -47,16 +47,16 @@ class ZorgApp
           profileList.add(new Profile("Piet","Piraat", 35, 70, 1.70));
          
           //Add Medicine Data to list as an new object
-          medicineList.add(new Medicine(
+          medicineList.add(new Medicine (
               "Oxazepam",
-              "Het werkt rustgevend, spierontspannend, vermindert angstgevoelens en beïnvloedt de overdracht van elektrische prikkels in de hersenen.",
-              "Oxazepam behoort tot de benzodiazepinen.",
-              "50 mg per 24 uur."));
+              "Het werkt rustgevend, spierontspannend, vermindert angstgevoelens en beïnvloedt de overdracht van elektrische prikkels in de hersenen",
+              "Oxazepam behoort tot de benzodiazepinen",
+              "50 mg per 24 uur"));
           medicineList.add(new Medicine(
               "Diclofenac",
-              "Het is te gebruiken bij pijn waarbij ook sprake is van een ontsteking, zoals bij gewrichtspijn, reumatoïde artritis (ontsteking van de gewrichten), ziekte van Bechterew en jicht (onsteking in uw gewricht).",
-              "Dit soort (Diclofenac) pijnstillers wordt ook wel NSAID's genoemd.",
-              "1 tablet per 6 uur."));
+              "Het is te gebruiken bij pijn waarbij ook sprake is van een ontsteking, zoals bij gewrichtspijn, reumatoïde artritis (ontsteking van de gewrichten), ziekte van Bechterew en jicht (onsteking in uw gewricht)",
+              "Dit soort (Diclofenac) pijnstillers wordt ook wel NSAID's genoemd",
+              "1 tablet per 6 uur"));
 
           //Add WeightMeasurePoint Data to list as a new object
           weightMeasurePointList.add(new WeightMeasurePoint("20-04-2019", "19:40", 76));
@@ -98,40 +98,40 @@ class ZorgApp
                   case "2":
                 	  
                 	  System.out.println(ShowProfileList(profileList));
-                      System.out.println("\nMaak een keuze om te bewerken: ");
+                      System.out.println("\n" + TransLang("Maak een keuze om te bewerken"));
                       int profileId = myScanner.nextInt();
                       myScanner.nextLine();
                       Profile profile = profileList.get(profileId -1);
                       System.out.println(ShowProfile(profile));
-                      System.out.println("\nKies een nummer om te bewerken: (1, 2, 3, 4, 5)");
+                      System.out.println("\n" + TransLang("Kies een nummer om te bewerken"));
                        
                        switch (myScanner.nextLine()) 
                        {    
                        		case "1": 
-                       			System.out.println("Voer uw voornaam in: ");
+                       			System.out.println(TransLang("Voer uw voornaam in"));
                        			EditProfile(profile,1);
                        			break;
                        		case "2":
-                       			System.out.println("Voer uw achternaam in: ");
+                       			System.out.println(TransLang("Voer uw achternaam in"));
                        			EditProfile(profile,2);
                        			break;
                        		case "3":
-                       			System.out.println("Voer uw leeftijd in: ");
+                       			System.out.println(TransLang("Voer uw leeftijd in"));
                        			EditProfile(profile,3);
                        			break;
                        		case "4":    
-                       			System.out.println("Voer uw gewicht in met een comma: ");
+                       			System.out.println(TransLang("Voer uw gewicht in met een comma"));
                        			EditProfile(profile,4);
                        			break;
                        		case "5":    
-                       			System.out.println("Voer uw lengte in met een comma: ");
+                       			System.out.println(TransLang("Voer uw lengte in met een comma"));
                        			EditProfile(profile,5);
                        			break;
                        		default:
                        			break;
                        }
                        System.out.println(ShowProfile(profile));
-                       System.out.println("\nDruk op enter om terug naar het menu te gaan.");
+                       System.out.println("\n" + TransLang("Druk op enter om terug naar het menu te gaan"));
                        myScanner.nextLine();
                        break;
                   case "3":
@@ -140,12 +140,12 @@ class ZorgApp
                       break;
                   case "4":
                 	   System.out.println(ShowMedicineList());
-                       System.out.println("\nMaak een keuze om te bewerken: ");
+                       System.out.println("\n" + TransLang("Maak een keuze om te bewerken"));
                        int medicineId = myScanner.nextInt();
                        myScanner.nextLine();
                        Medicine medicine = medicineList.get(medicineId -1);
                        System.out.println(ShowMedicine(medicine));
-                       System.out.println("\nKies een nummer om te bewerken: (1, 2, 3, 4)");
+                       System.out.println("\n" + TransLang("Kies een nummer om te bewerken"));
                        
                        switch (myScanner.nextLine()) 
                        {
@@ -165,7 +165,7 @@ class ZorgApp
 					   			break;	
 					   }
                        System.out.println(ShowMedicine(medicine));
-                       System.out.println("\nDruk op enter om terug naar het menu te gaan.");
+                       System.out.println("\n"+ TransLang("Druk op enter om terug naar het menu te gaan"));
                        
                        myScanner.nextLine();
                       break;
@@ -176,32 +176,32 @@ class ZorgApp
                       	break;  
                    case "6":
                        	System.out.println(ShowWeightList());
-                        System.out.println("\nMaak een keuze om te bewerken: ");
+                        System.out.println("\n"+ TransLang("Maak een keuze om te bewerken"));
                         int weightId = myScanner.nextInt();
                         myScanner.nextLine();
                         WeightMeasurePoint weightMeasurePoint = weightMeasurePointList.get(weightId -1);
                         System.out.println(ShowWeight(weightMeasurePoint));
-                        System.out.println("\nKies een nummer om te bewerken: (1, 2, 3)");
+                        System.out.println("\n" + TransLang("Kies een nummer om te bewerken"));
                         
                         switch (myScanner.nextLine()) 
                         {
  					   		case "1":
- 					   			System.out.println("Voer de datum in: ");
+ 					   			System.out.println(TransLang("Voer de datum in"));
  					   			EditWeight(weightMeasurePoint, 1);
  					   			break;
  					   		case "2":
- 					   			System.out.println("Voer de tijd in: ");
+ 					   			System.out.println(TransLang("Voer de tijd in"));
  					   			EditWeight(weightMeasurePoint, 2);	
  					   			break;
  					   		case "3":
- 					   			System.out.println("Voer uw gewicht in met een comma: ");
+ 					   			System.out.println(TransLang("Voer uw gewicht in met een comma"));
  					   			EditWeight(weightMeasurePoint, 3);					
  					   			break;
  					   		default:
  					   			break;	
  					   }
                         System.out.println(ShowWeight(weightMeasurePoint));
-                        System.out.println("\nDruk op enter om terug naar het menu te gaan");
+                        System.out.println("\n" + TransLang("Druk op enter om terug naar het menu te gaan"));
                         
                         myScanner.nextLine();
                         break;
@@ -222,7 +222,7 @@ class ZorgApp
                 	   	break;
                 	   	
                   default:
-                      System.out.println("Nummer niet herkent! Probeer nogmaals..");
+                      System.out.println(TransLang("Nummer niet herkent! Probeer nogmaals"));
                       myScanner.nextLine();
                       break;
               }
@@ -235,11 +235,11 @@ class ZorgApp
     private String ShowProfile(Profile profile) 
       {
           return
-              "\n1)Voornaam: "+ profile.getFirstName() +
-              "\n2)Achternaam: "+ profile.getLastName() +
-              "\n3)Leeftijd: "+ profile.getAge() +
-              "\n4)Gewicht: " + profile.getWeight() + " kg" +
-              "\n5)Lengte: " + profile.getLength() + " m" +
+              "\n1)"+ TransLang("Voornaam: ")  + profile.getFirstName() +
+              "\n2)"+ TransLang("Achternaam: ")+ profile.getLastName() +
+              "\n3)"+ TransLang("Leeftijd: ")  + profile.getAge() +
+              "\n4)"+ TransLang("Gewicht: ") + profile.getWeight() + " kg" +
+              "\n5)"+ TransLang("Lengte: ") + profile.getLength() + " m" +
               "\nBMI: " + profile.getBmi();
       }
     private String ShowProfileList(ArrayList<Profile> profileList) 
@@ -250,11 +250,11 @@ class ZorgApp
         {
 
             profileListReturn += 
-            	"\n\nKeuze: "+ id + ")" +	
-                "\nNaam: " + profile.getFirstName() +
-                "\nAchternaam: " + profile.getLastName() +
-                "\nLeeftijd: " + profile.getAge()  +
-                "\nLengte: " + profile.getLength() +
+            	"\n\n"+ TransLang ("Keuze: ")+ id + ")" +	
+                "\n" + TransLang ("Naam: ") + profile.getFirstName() +
+                "\n" + TransLang ("Achternaam: ") + profile.getLastName() +
+                "\n" + TransLang ("Leeftijd: ") + profile.getAge()  +
+                "\n" + TransLang ("Lengte: ") + profile.getLength() +
                 "\nBMI: " + profile.getBmi();
             id++;
         }
@@ -267,10 +267,10 @@ class ZorgApp
     {
            return
             	"\n\n" +	
-                "\n1)Medicijn: " + medicine.getMedicineName() +
-                "\n2)Beschrijving: " + medicine.getDescription() +
-                "\n3)Soort: " + medicine.getSort()  +
-                "\n4)Dosering: " + medicine.getDosage();
+                "\n1)" + TransLang("Medicijn: ") + TransLang (medicine.getMedicineName()) +
+                "\n2)" + TransLang("Beschrijving: ") +TransLang (medicine.getDescription()) +
+                "\n3)" + TransLang("Soort: ") + TransLang (medicine.getSort())  +
+                "\n4)" + TransLang("Dosering: ") + TransLang (medicine.getDosage());
     }
     
 	private String ShowMedicineList() 
@@ -281,11 +281,11 @@ class ZorgApp
         {
 
             medicineListReturn += 
-            	"\n\nKeuze: "+ id + ")" +	
-                "\nMedicijn: " + medicine.getMedicineName() +
-                "\nBeschrijving: " + medicine.getDescription() +
-                "\nSoort: " + medicine.getSort()  +
-                "\nDosering: " + medicine.getDosage();
+            	"\n\n" + TransLang ("Keuze: ")+ id + ")" +	
+                "\n" + TransLang ("Medicijn: ") + TransLang (medicine.getMedicineName()) +
+                "\n" + TransLang ("Beschrijving: ") + TransLang (medicine.getDescription()) +
+                "\n" + TransLang ("Soort: ") + TransLang (medicine.getSort())  +
+                "\n" + TransLang("Dosering: ") + TransLang (medicine.getDosage());
             id++;
         }
 		
@@ -295,9 +295,9 @@ class ZorgApp
 	private String ShowWeight(WeightMeasurePoint weightMeasurePointList) 
 	{
 		return
-				"\n1)Datum: " + weightMeasurePointList.getDate() +
-                "\n2)Tijd: " + weightMeasurePointList.getTime() +
-                "\n3)Gewicht: " + weightMeasurePointList.getWeight();
+				"\n1)" + TransLang("Datum: ") + weightMeasurePointList.getDate() +
+                "\n2)" + TransLang("Tijd: ") + weightMeasurePointList.getTime() +
+                "\n3)" + TransLang("Gewicht: ") + weightMeasurePointList.getWeight();
 	}
 	
 	private String ShowWeightList()	
@@ -308,10 +308,10 @@ class ZorgApp
         {
 
         	weightMeasurePointListReturn += 
-            	"\n\nKeuze: "+ id + ")" +	
-                "\nDatum: " + weightMeasurePoint.getDate() +
-                "\nTijd: " + weightMeasurePoint.getTime() +
-                "\nGewicht: " + weightMeasurePoint.getWeight();
+            	"\n\n" + TransLang ("Keuze: ")+ id + ")" +	
+                "\n" + TransLang ("Datum: ") + weightMeasurePoint.getDate() +
+                "\n" + TransLang ("Tijd: ") + weightMeasurePoint.getTime() +
+                "\n" + TransLang("Gewicht: ") + weightMeasurePoint.getWeight();
             id++;
         }
 		return weightMeasurePointListReturn;
@@ -419,7 +419,60 @@ class ZorgApp
           languageMap.put("Taal is veranderd naar Nederlands", "Language changed to Dutch");
           languageMap.put("Taal is veranderd naar Engels", "Language changed to English");
           languageMap.put("Druk op enter om terug naar het menu te gaan", "Press enter to go back to the menu");
-		
+          //cases
+          languageMap.put("Maak een keuze om te bewerken", "Choose an option to edit");
+          languageMap.put("Kies een nummer om te bewerken", "Choose a number to edit");
+          languageMap.put("Voer uw voornaam in", "Enter your firstname");
+          languageMap.put("Voer uw achternaam in", "Enter your lastname");
+          languageMap.put("Voer uw achternaam in", "Enter your lastname");
+          languageMap.put("Voer uw leeftijd in", "Enter your age");
+          languageMap.put("Voer uw gewicht in met een comma", "Enter your weight with a comma");
+          languageMap.put(" Druk op enter om terug naar het menu te gaan", "Press enter to go back to the menu");
+          languageMap.put("Maak een keuze om te bewerken", "Choose an option to edit");
+          languageMap.put("Kies een nummer om te bewerken", "Choose a number to edit");
+          languageMap.put("Voer de datum in", "Enter the date");
+          languageMap.put("Voer uw gewicht in met een comma", "Enter your weight with a comma");
+          languageMap.put("Nummer niet herkent! Probeer nogmaals", "Number not recognized! Try again");
+          languageMap.put("Voer de tijd in", "Enter the current time");
+          
+          //Show profile method
+          languageMap.put("Voornaam: ", "FirstName: ");
+          languageMap.put("Achternaam: ", "LastName: ");
+          languageMap.put("Leeftijd: ", "Age: ");
+          languageMap.put("Gewicht: ", "Weight: ");
+          languageMap.put("Lengte: ", "Height: "); 
+          //Show profileList method
+          languageMap.put("Keuze: ", "Choice: ");
+          languageMap.put("Naam: ", "Name: ");
+          languageMap.put("Voornaam: ", "FirstName: ");
+          languageMap.put("Achternaam: ", "LastName: ");
+          languageMap.put("Leeftijd: ", "Age: ");
+          languageMap.put("Lengte: ", "Height: ");
+          //Show Weight & WeightList method 
+          languageMap.put("Datum: ", "Date: ");
+          languageMap.put("Tijd: ", "Time: ");
+          languageMap.put("Gewicht: ", "Weight: ");
+          //Show medicine & medicineList method
+          languageMap.put("Medicijn: ", "Medicine: ");
+          languageMap.put("Beschrijving: ", "Description: ");
+          languageMap.put("Soort: ", "Type: ");
+          languageMap.put("Dosering: ", "Dosage: ");
+          //Translate medication information
+          languageMap.put("Oxazepam", "Oxazepam");
+          languageMap.put("Het werkt rustgevend, spierontspannend, vermindert angstgevoelens en beïnvloedt"
+          				+ " de overdracht van elektrische prikkels in de hersenen", 
+          				  "It has a calming, muscle-relaxing effect, reduces anxiety and influences"
+          				+ " the transmission of electrical stimuli in the brain ");
+          languageMap.put("Oxazepam behoort tot de benzodiazepinen", "Oxazepam is one of the benzodiazepines");
+          languageMap.put("50 mg per 24 uur", "50 mg per 24 hours");
+          languageMap.put("Diclofenac", "Diclofenac");
+          languageMap.put("Het is te gebruiken bij pijn waarbij ook sprake is van een ontsteking, zoals bij gewrichtspijn, reumatoïde artritis "
+          				+ "(ontsteking van de gewrichten), ziekte van Bechterew en jicht (onsteking in uw gewricht)", 
+          				  "It can be used for pain that includes inflammation, such as joint pain, rheumatoid arthritis (inflammation of the joints),"
+          				+ " ankylosing spondylitis and gout (inflammation in your joint)");
+          languageMap.put("Dit soort (Diclofenac) pijnstillers wordt ook wel NSAID's genoemd", "This type of (Diclofenac) pain reliever is also known as NSAIDs");
+          languageMap.put("1 tablet per 6 uur", "1 tablet every 6 hours");
+          
 	}
 	
 	private String TransLang(String word) 
